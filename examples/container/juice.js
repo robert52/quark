@@ -14,8 +14,6 @@ quark.define({
   self.exec({
     entity: 'apples'
   }, function(err, result) {
-    console.log('apples');
-
     if (err) {
       return callback(err);
     }
