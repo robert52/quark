@@ -3,7 +3,7 @@
 var _ = require('lodash');
 var Core = require('./lib/core');
 
-function Micro(opts) {
+function Quark(opts) {
   this.defaults = {
     transport: {
       type: 'http',
@@ -22,8 +22,8 @@ function Micro(opts) {
   Core.call(this);
 }
 
-_.extend(Micro.prototype, Core.prototype);
+_.extend(Quark.prototype, Core.prototype);
 
 module.exports = function build(opts) {
-  return new Micro(opts);
+  return new Quark(opts);
 };

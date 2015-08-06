@@ -13,6 +13,12 @@
     "lodash": "^3.9.3",
     "patrun": "^0.4.3"
   },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "request": "^2.60.0",
+    "should": "^7.0.2",
+    "supertest": "^1.0.1"
+  },
   "engines": {
     "node": ">= 0.10.0"
   },
