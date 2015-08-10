@@ -1,6 +1,6 @@
 {
   "name": "quark",
-  "version": "0.0.9",
+  "version": "0.0.1",
   "description": "A simple micro-service framework for node.js",
   "main": "index.js",
   "repository": "https://github.com/robert52/micro",
