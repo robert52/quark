@@ -23,7 +23,7 @@ $ npm install quarkjs
 __Example of a ping-pong app:__
 
 ```javascript
-var quark = require('quark')();
+var quark = require('quarkjs')();
 
 quark.define({
   action: 'ping'

@@ -1,9 +1,12 @@
 {
-  "name": "quark",
+  "name": "quarkjs",
   "version": "0.0.1",
   "description": "A simple micro-service framework for node.js",
   "main": "index.js",
-  "repository": "https://github.com/robert52/micro",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robert52/quark"
+  },
   "author": "Robert Onodi <robert.onodi89@gmail.com>",
   "license": "MIT",
   "dependencies": {
@@ -26,5 +29,23 @@
     "README.md",
     "index.js",
     "lib/"
+  ],
+  "bugs": {
+    "url": "https://github.com/robert52/quark/issues"
+  },
+  "homepage": "https://github.com/robert52/quark",
+  "directories": {
+    "example": "examples",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha tests/unit/ --ui bdd --recursive --reporter spec --timeout 3000 --slow 900"
+  },
+  "keywords": [
+    "microservices",
+    "micro",
+    "service",
+    "framework",
+    "small"
   ]
 }
