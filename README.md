@@ -23,24 +23,27 @@ $ npm install quarkjs
 __Example of a ping-pong app:__
 
 ```javascript
-var quark = require('quarkjs')();
+var quarkjs = require('quarkjs')();
 
-quark.define({
+quarkjs.define({
   action: 'ping'
 }, function(args, done) {
   done(null, { yeld: 'pong' });
 });
 
-quark.listen(function(err, addr) {
+quarkjs.listen(function(err, addr) {
   if (err) throw err;
 
-  console.log('quark %s is running on %s:%s', 'ping.pong', addr.address, addr.port);
+  console.log('quarkjs %s is running on %s:%s', 'ping.pong', addr.address, addr.port);
 });
+
+// by default quarkjs will start using the http transport on http://localhost:3000
+
 ```
 __Sending messages:__
 
 ```bash
-$ curl -d "http://localhost:3000/exec" '{"action" : "ping"}'
+$ curl -H "Content-Type: application/json" -X POST -d '{"action":"ping"}' http://localhost:3000/exec
 
 # output => { "yeld": "pong" }
 ```
