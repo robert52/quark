@@ -10,7 +10,6 @@
   "author": "Robert Onodi <robert.onodi89@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.13.2",
     "connect": "^3.4.0",
     "connect-timeout": "^1.6.2",
     "lodash": "^3.9.3",
