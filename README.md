@@ -23,15 +23,15 @@ $ npm install quarkjs
 __Example of a ping-pong app:__
 
 ```javascript
-var quarkjs = require('quarkjs')();
+var quark = require('quarkjs')();
 
-quarkjs.define({
+quark.define({
   action: 'ping'
 }, function(args, done) {
   done(null, { yeld: 'pong' });
 });
 
-quarkjs.listen(function(err, addr) {
+quark.listen(function(err, addr) {
   if (err) throw err;
 
   console.log('quarkjs %s is running on %s:%s', 'ping.pong', addr.address, addr.port);
@@ -43,7 +43,7 @@ quarkjs.listen(function(err, addr) {
 __Sending messages:__
 
 ```bash
-$ curl -H "Content-Type: application/json" -X POST -d '{"action":"ping"}' http://localhost:3000/exec
+$ curl -H "Content-Type: application/json" -d '{"action":"ping"}' http://localhost:3000/exec
 
 # output => { "yeld": "pong" }
 ```
