@@ -68,6 +68,16 @@ describe('quark', function() {
         callback(null, args);
       });
 
+      quark.define({
+        action: 'ping',
+        type: 'error'
+      }, function(args, callback) {
+        var err = new Error();
+        err.error = 'test_error';
+        err.summary = 'This is only a test error.';
+        callback(err);
+      });
+
       quark.listen(function(err, addr) {
         if (err) throw err;
 
@@ -89,7 +99,7 @@ describe('quark', function() {
         method: 'POST',
         body: {
           action: 'ping',
-          special: _specialString,
+          special: _specialString
         },
         json: true
       }, function(err, res, body) {
@@ -99,6 +109,26 @@ describe('quark', function() {
         should.exist(body);
         body.action.should.equal('ping');
         body.special.should.equal(_specialString);
+        done();
+      });
+    });
+
+    it('should get an error if the client sends an error', function(done) {
+      request({
+        url: 'http://127.0.0.1:3000/exec',
+        method: 'POST',
+        body: {
+          action: 'ping',
+          type: 'error'
+        },
+        json: true
+      }, function(err, res, body) {
+        if (err) throw err;
+
+        res.statusCode.should.equal(500);
+        should.exist(body);
+        body.error.should.equal('test_error');
+        body.summary.should.equal('This is only a test error.');
         done();
       });
     });
