@@ -2,6 +2,8 @@
 
 a mini framework for micro-service in node.js
 
+![npm version](https://badge.fury.io/js/quark.svg)
+
 ## Installation
 
 ```bash
