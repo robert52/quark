@@ -1,5 +1,5 @@
 {
-  "name": "quarkjs",
+  "name": "quark",
   "version": "0.1.4",
   "description": "A simple micro-service framework for node.js",
   "main": "index.js",
