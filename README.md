@@ -5,7 +5,7 @@ a mini framework for micro-service in node.js
 ## Installation
 
 ```bash
-$ npm install quarkjs
+$ npm install quark
 ```
 
 ## Features
@@ -17,13 +17,13 @@ $ npm install quarkjs
 ## Quick start
 
 ```bash
-$ npm install quarkjs
+$ npm install quark
 ```
 
 __Example of a ping-pong app:__
 
 ```javascript
-var quark = require('quarkjs')();
+var quark = require('quark')();
 
 quark.define({
   action: 'ping'
