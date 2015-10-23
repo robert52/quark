@@ -63,6 +63,22 @@ To run an example us the following command:
 $ node examples/ping.pong.js
 ```
 
+## Test
+
+To run tests, simply run the following command:
+
+```bash
+$ npm test
+```
+
+## When to use quark
+
+- When you want to separate your monolithic application into small services.
+- When you don't care who provides the functionality only the output of an action.
+- When you don't know where the actual implementation lives (network, local).
+
+We can communicate with each other through different channels, be it a simple conversation or in a chat room on the internet, the core message will get to the other person.
+
 ## License
 
 [MIT](https://github.com/robert52/quark/blob/master/LICENSE)

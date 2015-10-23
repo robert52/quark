@@ -1,6 +1,6 @@
 {
   "name": "quark",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple micro-service framework for node.js",
   "main": "index.js",
   "repository": {
@@ -11,7 +11,6 @@
   "license": "MIT",
   "dependencies": {
     "connect": "^3.4.0",
-    "connect-timeout": "^1.6.2",
     "lodash": "^3.9.3",
     "patrun": "^0.4.3"
   },
@@ -38,7 +37,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "mocha tests/unit/ --ui bdd --recursive --reporter spec --timeout 3000 --slow 900"
+    "test": "mocha tests/ --ui bdd --recursive --reporter spec --timeout 3000 --slow 900"
   },
   "keywords": [
     "microservices",
