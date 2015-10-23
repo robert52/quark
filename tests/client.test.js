@@ -6,7 +6,8 @@ var client = Quark();
 
 var clientConfig = {
   hostname: 'localhost',
-  port: 3001
+  port: 3001,
+  timeout: 500
 };
 
 describe('#client()', function() {
@@ -25,6 +26,15 @@ describe('#client()', function() {
       err.error = 'ping_error';
       err.summary = 'Just an error summary.';
       callback(err);
+    });
+
+    client.define({
+      action: 'ping',
+      type: 'timeout'
+    }, function(args, callback) {
+      setTimeout(function() {
+        callback(null, { message: 'timeout' });
+      }, 1000)
     });
 
     quark.listen(function(err, addr) {
@@ -87,6 +97,16 @@ describe('#client()', function() {
       should.not.exist(result);
       err.error.should.equal('ping_error');
       err.summary.should.equal('Just an error summary.');
+      done();
+    });
+  });
+
+  it('should get timeout if client is not available', function(done) {
+    quark.exec({
+      action: 'ping',
+      type: 'timeout'
+    }, function(err, result) {
+      should.exist(err);
       done();
     });
   });
